@@ -5,6 +5,7 @@ import About from './components/About';
 import Alert from './components/Alert';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import NotFound from './components/NotFound/NotFound';
 import TextForm from './components/TextForm';
 
 
@@ -42,10 +43,11 @@ function App() {
       <Navbar mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <Routes>
-        <Route path='/' element={<div className="container my-4">
+        <Route exact path='/' element={<div className="container my-4">
           <TextForm mode={mode} showAlert={showAlert} heading='Enter Your Text Below' />
         </div>}></Route>
-        <Route path='/about' element={<About mode={mode} />}></Route>
+        <Route exact path='/about' element={<About mode={mode} />}></Route>
+        <Route exact path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer mode={mode} toggleMode={toggleMode} />
     </>

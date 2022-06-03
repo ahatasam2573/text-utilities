@@ -1,0 +1,22 @@
+.error-div img{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.error-btn{
+    margin-top: 15px;
+    height: 40px;
+    width: 200px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: beige;
+    border: 1px solid rgb(250, 77, 77);
+    color: rgb(250, 137, 62);
+    cursor: pointer;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+.error-btn:hover{   
+    background-color: burlywood;
+    color: antiquewhite;
+}

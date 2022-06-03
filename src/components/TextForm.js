@@ -4,18 +4,21 @@ const TextForm = (props) => {
     const [text, setText] = useState('')
     const handleConvertToUppercase = event => {
         let newText = text.toUpperCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert('Converted to uppercase', 'success');
     }
     const handleConvertToLowercase = event => {
         let newText = text.toLowerCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert('Converted to lowercase', 'success');
     }
     const handleClearText = event => {
         setText('');
     }
     const removeExtraSpaces = event => {
         let newText = text.split(/[ ]+/);
-        setText(newText.join(' '))
+        setText(newText.join(' '));
+        props.showAlert('Removed all unnecessary space', 'success');
     }
 
     const handleToChange = event => {
@@ -25,6 +28,7 @@ const TextForm = (props) => {
         const text = document.getElementById('myTextBox');
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert('Copied to clipboard!', 'success');
     }
 
     return (

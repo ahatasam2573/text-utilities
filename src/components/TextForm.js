@@ -29,10 +29,10 @@ const TextForm = (props) => {
 
     return (
         <>
-            <div>
+            <div style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className='form-control' id='myTextBox' rows='8' onChange={handleToChange} value={text} ></textarea>
+                    <textarea className='form-control' id='myTextBox' rows='8' onChange={handleToChange} style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} value={text} ></textarea>
                 </div>
                 <button onClick={handleConvertToUppercase} className="btn btn-primary mx-1">Transform to uppercase</button>
                 <button onClick={handleConvertToLowercase} className="btn btn-primary mx-1">Transform to lowercase</button>
@@ -40,12 +40,12 @@ const TextForm = (props) => {
                 <button onClick={removeExtraSpaces} className="btn btn-primary mx-1">Remove Extra Space</button>
                 <button onClick={handleClearText} className="btn btn-primary mx-1">Clear the text</button>
             </div>
-            <div className="container my-3 pb-4">
+            <div className="container my-3 pb-4" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
                 <h2>Your text summary</h2>
                 <p>{text.split(' ').length} words, {text.length} characters</p>
                 <p>{0.008 * text.split(' ').length} minutes take to read</p>
                 <h2>Preview</h2>
-                <p>{text}</p>
+                <p>{text.length > 0 ? text : 'Enter something in the text box above to preview it here'}</p>
             </div>
         </>
     );

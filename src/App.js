@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container my-4">
+      <div style={{ backgroundColor: '#aaa69d' }} className="container my-4">
         <TextForm heading='Enter Your Text Below' />
       </div>
     </>

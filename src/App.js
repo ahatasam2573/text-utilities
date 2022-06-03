@@ -26,9 +26,9 @@ function App() {
         <Route path='/' element={<div className="container my-4">
           <TextForm mode={mode} heading='Enter Your Text Below' />
         </div>}></Route>
-        <Route path='/about' element={<About />}></Route>
+        <Route path='/about' element={<About mode={mode} />}></Route>
       </Routes>
-      <Footer mode={mode} />
+      <Footer mode={mode} toggleMode={toggleMode} />
     </>
   );
 }
